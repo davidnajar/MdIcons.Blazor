@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "filesystem",
+      "library": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff",
+      "destination": "wwwroot/lib/@mdi/fonts"
+
+    },
+    {
+      "provider": "filesystem",
+      "library": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot",
+      "destination": "wwwroot/lib/@mdi/fonts"
+
+    },
+    {
+      "provider": "filesystem",
+      "library": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf",
+      "destination": "wwwroot/lib/@mdi/fonts"
+
+    },
+    {
+      "provider": "filesystem",
+      "library": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2",
+      "destination": "wwwroot/lib/@mdi/fonts"
+
+    },
+    {
+      "provider": "filesystem",
+      "library": "node_modules/@mdi/font/css/materialdesignicons.min.css",
+      "destination": "wwwroot/lib/@mdi/css/"
+
+    }
+  ]
+}

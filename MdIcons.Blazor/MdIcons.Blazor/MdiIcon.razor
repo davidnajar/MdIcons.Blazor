@@ -1,0 +1,11 @@
+﻿  <span aria-hidden="true" class="mdi @(Helpers.IconsDictionary[Icon])" style="font-size: @(Size)px;"></span>
+
+ @code {
+    [Parameter] public MdiIcons Icon { get; set; }
+    [Inject] LoadFontInterop _jsModule { get; set; }
+    [Parameter] public int Size { get; set; } = 24;
+    protected override async Task  OnInitializedAsync()
+    {
+       await _jsModule.Init();
+    }
+ }

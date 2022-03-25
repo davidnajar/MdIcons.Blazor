@@ -1,0 +1,38 @@
+﻿@page "/"
+@using Blazored.Modal.Services
+@using MdIcons.Blazor
+
+<PageTitle>MdIcons</PageTitle>
+<h1>MdIcons Blazor pack</h1>
+<span>Wraps <a href="https://materialdesignicons.com/" >Material design icons</a> in blazor without pain!</span>
+
+<div class="row">
+    <Virtualize Items="Icons"  Context="icon">
+    <div class="col-2 col-sm-4 col-md-3 col-lg-2">
+        <div class="d-flex flex-column align-items-center"  role="button" @onclick=@(() => ShowIconDetail(icon))>
+    <MdiIcon Icon=icon Size=48></MdiIcon>
+    <code>@Enum.GetName(typeof(MdiIcons), icon)</code>
+    </div>
+    </div>
+</Virtualize>
+
+
+</div>
+
+@code{
+    int counter = 0;
+    List<MdiIcons> Icons;
+    [CascadingParameter] public IModalService Modal { get; set; }
+    protected override Task OnInitializedAsync()
+    {
+        Icons = Enum.GetValues<MdiIcons>().ToList();
+        return base.OnInitializedAsync();
+    }
+      void ShowIconDetail(MdiIcons icon)
+    {
+        var parameters = new ModalParameters();
+        parameters.Add("Icon", icon);
+
+        Modal.Show<IconDetail>("Icon Detail", parameters);
+    }
+}

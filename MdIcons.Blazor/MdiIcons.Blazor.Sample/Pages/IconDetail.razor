@@ -1,0 +1,23 @@
+﻿@using MdIcons.Blazor
+<div class="d-flex-column">
+    <div class="d-flex d-flex-row align-items-center">
+    <MdiIcon Icon=Icon Size=48></MdiIcon>
+    <div class="d-flex mx-2">
+
+        <h4>@Enum.GetName(typeof(MdiIcons), Icon)</h4>
+    </div>
+    </div>
+    <div
+    >
+    <h4>Usage</h4>
+
+    <pre><code>
+        &lt;MdiIcon Icon="MdiIcons.@(Enum.GetName(typeof(MdiIcons), Icon))" Size=48 /&gt;
+
+       </code></pre>
+    </div>
+    </div>
+
+@code {
+    [Parameter] public MdiIcons Icon { get; set; }
+}
