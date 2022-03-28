@@ -34,7 +34,7 @@ jobs:
       run: dotnet restore  MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj
     - name: Build
       run: dotnet build MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj --no-restore
-    - name: Publish
+    - name: pack
       run: dotnet publish MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj --no-restore --output packages/ --configuration Release -p:PackageVersion=${{ steps.gitversion.outputs.NuGetVersionV2 }}
     - name: push
       run: dotnet nuget push packages/*nupkg -k ${{secrets.NUGET_API_KEY}}  --source https://api.nuget.org/v3/index.json
