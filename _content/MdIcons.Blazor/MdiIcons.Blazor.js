@@ -16,7 +16,7 @@ export function loadIconFont() {
         link.id = "mdiicons-blazor-css";
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = baseHRef+'_content/MdIcons.Blazor/lib/@mdi/css/materialdesignicons.min.css';
+        link.href = baseHref+'_content/MdIcons.Blazor/lib/@mdi/css/materialdesignicons.min.css';
         link.media = 'all';
         head.appendChild(link);
     }
