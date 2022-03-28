@@ -53,5 +53,5 @@ To add an icon, in any .razor file, simply add an <MdiIcon/>  component:
 
 
 
-For a list of icons you can check the [Official list](https://materialdesignicons.com/) or the [MdIcons.Blazor Helper page]()
+For a list of icons you can check the [Official list](https://materialdesignicons.com/) or the [MdIcons.Blazor Helper page](https://davidnajar.github.io/MdIcons.Blazor/)
 
