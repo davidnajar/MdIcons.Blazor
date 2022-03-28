@@ -43,8 +43,6 @@ Add the required namespace in your _Imports.razor file
 @using MdIcons.Blazor
 ```
 
-
-
 To add an icon, in any .razor file, simply add an <MdiIcon/>  component:
 
 ````csharp
