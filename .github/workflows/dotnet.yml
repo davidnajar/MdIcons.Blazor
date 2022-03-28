@@ -10,19 +10,30 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: ${{ !contains(github.event.head_commit.message, '#no-action') }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.9.4
+      with:
+        versionSpec: '5.3.x'
+    - name: Use GitVersion
+      # Step id is used as reference for the output values
+      id: gitversion 
+      uses: gittools/actions/gitversion/execute@v0.9.4
+    # Echo out the version, helps with quick debugging of the build without having to expand the prior step.
+    - run: |
+        echo "NuGetVersionV2: ${{ steps.gitversion.outputs.NuGetVersionV2 }}"
     - name: Restore dependencies
       run: dotnet restore  MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj
     - name: Build
       run: dotnet build MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj --no-restore
     - name: Publish
-      run: dotnet publish MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj --no-restore --output packages/
+      run: dotnet publish MdIcons.Blazor/MdIcons.Blazor/MdIcons.Blazor.csproj --no-restore --output packages/ --configuration Release -p:PackageVersion=${{ steps.gitversion.outputs.NuGetVersionV2 }}
     - name: push
-      run: dotnet nuget push packages/ -k ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push packages/*nupkg -k ${{secrets.NUGET_API_KEY}}  --source https://api.nuget.org/v3/index.json
 
