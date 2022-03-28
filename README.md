@@ -43,7 +43,7 @@ Add the required namespace in your _Imports.razor file
 @using MdIcons.Blazor
 ```
 
-To add an icon, in any .razor file, simply add an <MdiIcon/>  component:
+To add an icon, in any .razor file, simply add a <MdiIcon/>  component:
 
 ````csharp
  <MdiIcon Icon="MdIcons.Emoticon.Cool" Size=48></MdiIcon>
