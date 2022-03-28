@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore  MdIcons.Blazor/MdIcons.Blazor.Sample/MdIcons.Blazor.Sample.csproj 
+      run: dotnet restore  MdIcons.Blazor/MdiIcons.Blazor.Sample/MdiIcons.Blazor.Sample.csproj 
     - name: publish 
-      run:  dotnet publish  MdIcons.Blazor/MdIcons.Blazor.Sample/MdIcons.Blazor.Sample.csproj -c Release -o release --nologo --no-restore
+      run:  dotnet publish  MdIcons.Blazor/MdiIcons.Blazor.Sample/MdiIcons.Blazor.Sample.csproj -c Release -o release --nologo --no-restore
       # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to MdIcons.Blazor
       run: sed -i 's/<base href="\/" \/>/<base href="\/MdIcons.Blazor\/" \/>/g' release/wwwroot/index.
