@@ -9,3 +9,9 @@ updates:
     directory: "/MdIcons.Blazor/MdIcons.Blazor/" # Location of package manifests
     schedule:
       interval: "weekly"
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/MdIcons.Blazor/MdIcons.Blazor/"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "daily"
