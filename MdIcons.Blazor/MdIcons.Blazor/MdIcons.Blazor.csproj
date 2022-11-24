@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.1" />
-	  <PackageReference Include="Yarn.MSBuild" Version="1.22.17" >
+	  <PackageReference Include="Yarn.MSBuild" Version="1.22.19" >
 		  <PrivateAssets>all</PrivateAssets>
 	  </PackageReference>
   </ItemGroup>
