@@ -1,7 +1,7 @@
 # MdIcons.Blazor
 Wraps Material design icons in blazor without pain!
 
-##Getting Started
+## Getting Started
 
 In your WebAssembly (client) project, add the package from Nuget
 
